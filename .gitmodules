@@ -1,0 +1,6 @@
+[submodule "external/americasnlp2025"]
+	path = external/americasnlp2025
+	url = https://github.com/AmericasNLP/americasnlp2025.git
+[submodule "external/norgrai-wayuunaiki"]
+	path = external/norgrai-wayuunaiki
+	url = https://github.com/norgrai/wayuunaiki.git
