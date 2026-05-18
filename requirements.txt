@@ -1,0 +1,19 @@
+# MLX (Apple Silicon)
+mlx==0.31.2
+mlx-lm==0.31.3
+
+# HuggingFace
+transformers==5.8.1
+datasets==4.8.5
+huggingface_hub==1.15.0
+tokenizers==0.22.2
+safetensors==0.7.0
+
+# Evaluación MT
+sacrebleu==2.6.0
+
+# Datos y utilidades
+numpy==2.4.5
+pandas==3.0.3
+scikit-learn==1.8.0
+tqdm==4.67.3

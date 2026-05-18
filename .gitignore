@@ -1,0 +1,54 @@
+# Entorno virtual Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Pesos de modelos (usar HuggingFace Hub o almacenamiento externo)
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+*.pkl
+
+# Caché de HuggingFace y MLX
+.cache/
+hf_cache/
+mlx_cache/
+
+# Datos crudos (pueden ser muy grandes)
+data/raw/*
+!data/raw/.gitkeep
+
+# Logs y artefactos temporales
+*.log
+*.tmp
+wandb/
+runs/
+lightning_logs/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribución / empaquetado Python
+dist/
+build/
+*.egg-info/
+*.egg
