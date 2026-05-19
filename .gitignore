@@ -24,6 +24,12 @@ mlx_cache/
 data/raw/*
 !data/raw/.gitkeep
 
+# Datos de entrenamiento grandes → HuggingFace Hub
+data/processed/*.jsonl
+data/mlx_es_to_guc/
+data/mlx_tatoeba_with_dict/
+data/mlx_tatoeba_short_with_dict/
+
 # Logs y artefactos temporales
 *.log
 *.tmp
