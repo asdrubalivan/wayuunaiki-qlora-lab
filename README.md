@@ -6,13 +6,40 @@ El wayuunaiki es la lengua del pueblo Wayuu, hablada en la península de La Guaj
 
 ---
 
+## Modelos y datos en HuggingFace
+
+Los pesos de los adaptadores y los datasets de entrenamiento están alojados en HuggingFace:
+
+| Recurso | URL |
+|---|---|
+| Adaptadores LoRA | [asdrubalivan/wayuunaiki-qwen25-lora](https://huggingface.co/asdrubalivan/wayuunaiki-qwen25-lora) |
+| Datasets | [asdrubalivan/wayuunaiki-dataset](https://huggingface.co/datasets/asdrubalivan/wayuunaiki-dataset) |
+
+Para descargar los adaptadores:
+
+```bash
+# Descargar un adaptador específico
+hf download asdrubalivan/wayuunaiki-qwen25-lora --local-dir adapters/
+```
+
+Para descargar los datos:
+
+```bash
+hf download asdrubalivan/wayuunaiki-dataset --repo-type dataset --local-dir data/
+```
+
+---
+
 ## Estructura del repositorio
 
 ```
 wayuunaiki-qlora-lab/
-├── adapters/                  # Configuraciones de adaptadores LoRA (pesos excluidos del repo)
+├── adapters/                  # Configuraciones LoRA (pesos en HuggingFace)
 │   ├── qwen25_15b_es_to_guc_run1/   # 300 iteraciones
-│   └── qwen25_15b_es_to_guc_run3/   # 1 000 iteraciones
+│   ├── qwen25_15b_es_to_guc_run3/   # 1 000 iteraciones
+│   ├── qwen25_dict/                 # 1 000 iters, datos con diccionario
+│   ├── qwen25_dict_short/           # 300 iters, datos cortos con diccionario
+│   └── qwen25_dict_short_1k/        # 1 000 iters, datos cortos con diccionario
 ├── configs/                   # Configuraciones de entrenamiento (YAML/JSON personalizados)
 ├── data/
 │   ├── dict/                  # Diccionario español ↔ wayuunaiki (CSV)
@@ -165,4 +192,4 @@ git clone --recurse-submodules https://github.com/asdrubalivan/wayuunaiki-qlora-
 - Python 3.11+
 - MLX 0.31+ / MLX-LM 0.31+
 
-Los pesos de los adaptadores (`.safetensors`) no están incluidos en el repositorio. Se pueden regenerar con el comando de fine-tuning de la sección anterior.
+Los pesos de los adaptadores (`.safetensors`) y los datos de entrenamiento grandes no están incluidos en este repositorio. Están disponibles en HuggingFace (ver sección **Modelos y datos en HuggingFace**) o se pueden regenerar con los scripts de la sección anterior.
